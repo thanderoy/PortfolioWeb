@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POR_APP</title>
+    <!-- CSS only -->
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+</head>
+
+<body>
+    
+    {% block content %}
+      
+    {% endblock content %}
+
+
+    <!-- JS, Popper.js, and jQuery -->
+    <script src="{% static 'js/app.js' %}"></script>
+
+</body>
+</html>

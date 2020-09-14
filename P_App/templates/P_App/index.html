@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+{% extends "P_App/main.html" %}
+{% load static %}
+
+{% block content %}
+ 
+    <header>
+        <img src="{% static 'images/THANDE LOGO W@2x.png' %}" alt="">
+        <div class="hamburger">
+            <div class="hamburger-btn"></div>
+        </div>
+    
+    </header>
+
+    <nav class="navi">
+        <ul>
+            <li class="navlink"><a href="#">Home</a></li>
+            <li class="navlink"><a href="#about">About</a></li>
+            <li class="navlink"><a href="#services">Services</a></li>
+            <li class="navlink"><a href="#portfolio">Portfolio</a></li>
+            <li class="navlink"><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="banner" id="nav home">
+        <div class="content">
+            <h1>THANDE ROY</h1>
+            <div class="seperator"></div>
+            <p>Web Developer</p>
+        </div>
+        <div class="content-btn">
+            <a href="#about">More</a>
+        </div>
+        <ul class="sci">
+            <li><a href=""><img src="{% static 'images/facebook.png' %}" alt=""></a></li>
+            <li><a href=""><img src="{% static 'images/twitter.png' %}" alt=""></a></li>
+            <li><a href=""><img src="{% static 'images/linkedin.png' %}" alt=""></a></li>
+        </ul>
+    </section>
+
+    <section class="about" id="about">
+        <div class="about-content">
+            <h1>About</h1>
+            <p>Hello, I'm Thande Roy. A Full Stack Web Designer/Developer. I have 3+ years experience building websites using HTML5, CSS and JS. I've been working and specializing in Django for the past 1 year. Check out the services I offer below.</p>
+        </div>
+    </section>
+        
+    <section class="services" id="services">
+        <div class="serv-content">
+            <h1>Services</h1>
+            <p>With building websites, I have knowledge on how to work with AWS RDS and Postgres for Databases as well as S3 Buckets to handle static files and Heroku for hosting Django Websites. </p>
+        </div>
+        <div class="cards">
+            <div class="card">
+                <img src="{% static 'images/Build@2x.png' %}" alt="">
+                <div>
+                    <h2>Build Websites from Scratch</h2>
+                    <div class="seperator"></div>
+                    <p>I can design and code stunning websites which are responsive from scratch or build from existing templates as required by the clients.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="{% static 'images/Fix@2x.png' %}" alt="">
+                <div>
+                    <h2>Fix Bugs and add Features</h2>
+                    <div class="seperator"></div>
+                    <p>I can also fix issues/bugs on existing websites and do some UI/UX facelift or add more or better functionality to improve the website's appearance and performance. </p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="{% static 'images/API@2x.png' %}" alt="">
+                <div>
+                    <h2>Intergrate REST API's</h2>
+                    <div class="seperator"></div>
+                    <p>I can intergrate or connect your website to API's measnt to improve our website or our business that include payment gateways like PayPal, Visa, MasterCard... </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="portfolio" id="portfolio">
+        <div class="por-content">
+            <h1>Portfolio</h1>
+            <p>Some of my work and projects i've done to date</p>
+        </div>
+        <div class="pills">
+            <div class="pill">
+                <div class="primage">
+                    <img src="{% static 'images/book.jpg' %}" alt="">
+                </div>
+                <div class="prtext">
+                    <div>
+                        <h2>Project 1 - Coming Soon</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio illo sed ut pariatur natus voluptates voluptate nulla consequatur saepe, quae illum, quis soluta incidunt eos quia molestias perspiciatis fugit beatae?</p>
+                    </div>
+                </div>
+            </div>
+            <div class="pill">
+                <div class="primage">
+                    <img src="{% static 'images/sourcecode.jpg' %}" alt="">
+                </div>
+                <div class="prtext">
+                    <div>
+                        <h2>Project 2 - Coming Soon</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio illo sed ut pariatur natus voluptates voluptate nulla consequatur saepe, quae illum, quis soluta incidunt eos quia molestias perspiciatis fugit beatae?</p>
+                    </div>
+                </div>
+            </div>
+            <div class="pill">
+                <div class="primage">
+                    <img src="{% static 'images/headphones.jpg' %}" alt="">
+                </div>
+                <div class="prtext">
+                    <div>
+                        <h2>Project 2 - Coming Soon</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio illo sed ut pariatur natus voluptates voluptate nulla consequatur saepe, quae illum, quis soluta incidunt eos quia molestias perspiciatis fugit beatae?</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <h1>Contact </h1>
+        <form class="contact-form" action="{% url 'send_email' %}" method="POST" >
+            {% csrf_token %}
+            <input class="form-text" type="text" placeholder="Name" name="username">
+            <input class="form-text" type="text" placeholder="Subject" name="subject">
+            <input class="form-text" type="email" placeholder="Email" name="email">
+            <textarea class="form-text" type="text" placeholder="Message" name="message"></textarea>
+            <input class="form-btn" type="submit" value="Send">
+        </form>
+    </section>
+
+    <section class="footer" id="footer">
+        <div class="foo-content">
+            <div class="footer-logo">
+                <a href="#home"><img src="{% static 'images/THANDE LOGO W@2x.png' %}" alt=""></a>
+            </div>
+            <div class="footer-social">
+                <li><a href=""><img src="{% static 'images/facebook.png' %}" alt=""></a></li>
+                <li><a href=""><img src="{% static 'images/twitter.png' %}" alt=""></a></li>
+                <li><a href=""><img src="{% static 'images/linkedin.png' %}" alt=""></a></li>
+            </div>
+            <div class="footer-text">
+                <p>roy.thande@gmail.com</p>
+                <p>&copy; 2020 Thande Roy</p>
+            </div>
+        </div>
+    </section>
+
+
+
+{% endblock content %}
