@@ -1,6 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .email {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            min-width: 300px;
+            background: rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            
+        }
 
-{{ username }}  
-{{ email ]}
+        .header {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            padding: .5rem;
+            background: #161616;
+        }
 
-{{ subject }}
-{{ message }}
+        img {
+            position: relative;
+            width: 50px;
+            height: 50px;
+            transition: 0.6s;
+        }
+
+        .date, .text span p {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: .75rem;
+            font-weight: 100;
+            color: #828282;
+            padding:0 .5rem;
+            
+        } 
+
+        .text {
+            display: flex;
+            flex-direction: column;
+            color: #161616;
+            padding: .5rem;
+        }
+        .text span {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+            
+        }
+
+        .text h2 {
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            text-align: center;
+            color: #161616;
+        }
+
+        .text p {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 1rem;
+            padding: 0 .5rem;
+            max-width: 500px;
+        }
+
+    </style>
+        
+</head>
+<body>
+    <div class="email">
+        <div class="header"><img src="./static/images/THANDE LOGO W@2x.png" alt="Thande Logo"></div>
+
+        <hr width="60%">
+        
+        <div class="date"><span id="DateTime"></span></div>
+        
+        <div class="text">
+            <h2>{{ subject }}</h2> 
+            <span>
+                <p>{{ username }}</p> 
+                <p>{{ email }}</p> 
+            </span>
+            <p>{{ message }} </p>
+        </div>
+        
+    </div>
+    
+    <script>
+        var Days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thur', 'Fri', 'Sat'];
+        var Months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'];
+        function addZero(i) {
+            if (i < 10) {
+                i = "0" + i;
+            }
+            return i;
+        }
+
+        var today = new Date();
+
+        var dayName = Days[today.getDay()];
+        var dayNo = today.getDate();
+        var monthName = Months[today.getMonth()];
+        var yearNo = today.getFullYear();
+
+        var hrNo = addZero(today.getHours());
+        var minsNo = addZero(today.getMinutes());
+
+        var dateTime = dayName + ' ' + dayNo + ', ' + monthName + ' ' + yearNo + '    ' + hrNo + ':' + minsNo;
+        document.getElementById('DateTime').innerHTML = dateTime;
+    </script>
+</body>
+</html>
