@@ -3,9 +3,17 @@
 
 {% block content %}
 
-    <div class="content">
+    <div class="message">
+        <div class="wrapper">
+            <div class="one fas fa-check-double"></div>
+            <div class="two fas fa-check"></div>
+        </div>
         <h1>Thanks</h1>
-        <a class="content-btn" href="{% url 'index' %}">Back</a>
+        <p>I'll get back to you soonest. Thanks for your feedback</p>
+        <a class="back-btn" href="{% url 'index' %}">
+            <input class="back" type="submit" value="&#xf053">
+            <span><p>Back</p></span>
+        </a>
     </div>
 
 {% endblock content %}
