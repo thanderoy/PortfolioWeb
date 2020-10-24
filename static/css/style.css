@@ -838,6 +838,61 @@ span i {
   transition: all 0.3s ease-out;
 }
 
+.email {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-width: 300px;
+  background: rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+.email .header {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 0.5rem;
+  background: #161616;
+}
+.email img {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  transition: 0.6s;
+}
+.email .date, .email .text span p {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.75rem;
+  font-weight: 100;
+  color: #828282;
+  padding: 0 0.5rem;
+}
+.email .text {
+  display: flex;
+  flex-direction: column;
+  color: #161616;
+  padding: 0.5rem;
+}
+.email .text span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+.email .text h2 {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+  text-align: center;
+  color: #161616;
+}
+.email .text p {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  padding: 0 0.5rem;
+  max-width: 500px;
+}
+
 /* Responsiveness */
 @media (max-width: 768px) {
   /* style.css */
