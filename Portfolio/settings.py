@@ -126,6 +126,8 @@ USE_TZ = True
 STATIC_URL = 'https://thanderoy-portfolio.bucket.s3.amazonaws.com/static/'
 MEDIA_URL = 'https://thanderoy-portfolio.bucket.amazonaws.com/static/images/'
 
+# STATIC_URL = "BASE_DIR / static/"
+# MEDIA_URL = "BASE_DIR / static/images/"
 
 STATICFILES_DIRS = [
     BASE_DIR / 'static',
