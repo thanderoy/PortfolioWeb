@@ -19,6 +19,10 @@ html, body {
   background: #161616;
 }
 
+.body.lock-scroll {
+  position: fixed;
+}
+
 #grid {
   display: grid;
   grid-template-columns: 1 1fr;
@@ -835,7 +839,7 @@ span i {
 }
 
 /* Responsiveness */
-@media screen and (max-width: 800px) {
+@media (max-width: 768px) {
   /* style.css */
   #grid {
     width: 100vw;
@@ -843,7 +847,7 @@ span i {
 
   .navigation header {
     /* padding: 40px 100px; */
-    padding: 50px;
+    padding: 40px;
   }
 
   nav {
@@ -859,15 +863,19 @@ span i {
 
   .banner {
     /* padding: 100px; */
+    width: 100vw;
     padding: 50px;
   }
   .banner .content .seperator {
     /* width: 300px; */
     width: 50%;
   }
+  .banner .content h1 {
+    font-size: 5rem;
+  }
   .banner .content p {
     /* font-size: 2.5rem; */
-    font-size: 3.5rem;
+    font-size: 3rem;
   }
   .banner.sidekick {
     /* transform: translateX(-400px); */
@@ -885,13 +893,14 @@ span i {
 
   .about {
     /* padding: 100px; */
+    width: 100vw;
     padding: 50px;
   }
   .about .content h1 {
     /* font-size: 150px; */
     /* left: -200px; */
-    font-size: 120px;
-    left: -25%;
+    font-size: 100px;
+    left: -15%;
   }
   .about .content p {
     /* width: 70%; */
@@ -902,11 +911,14 @@ span i {
     left: 10%;
   }
 
+  .services {
+    width: 100vw;
+  }
   .services .serv-content h1 {
     /* font-size: 150px; */
     /* left: -120px; */
-    font-size: 120px;
-    left: -15%;
+    font-size: 100px;
+    left: -5%;
   }
   .services .serv-content p {
     /* width: 70%; */
@@ -917,11 +929,14 @@ span i {
     left: 10%;
   }
 
+  .portfolio {
+    width: 100vw;
+  }
   .portfolio .por-content h1 {
     /* font-size: 150px; */
     /* left: -120px; */
-    font-size: 120px;
-    left: -15%;
+    font-size: 100px;
+    left: -5%;
   }
   .portfolio .por-content p {
     /* width: 70%; */
@@ -943,15 +958,16 @@ span i {
 
   .contact {
     /* padding: 40px 50px; */
+    width: 100vw;
     padding: 50px;
   }
   .contact h1 {
     /* font-size: 150px; */
-    font-size: 120px;
+    font-size: 100px;
   }
   .contact .contact-form {
     /* width: 55%; */
-    width: 65%;
+    width: 80%;
   }
   .contact .contact-form textarea {
     /* height: 150px; */
@@ -973,10 +989,11 @@ span i {
 
   .footer {
     /* padding: 40px 50px; */
+    width: 100vw;
     padding: 50px;
   }
 }
-@media screen and (max-width: 450px) {
+@media (max-width: 480px) {
   /* style.css */
   #grid {
     width: 100vw;
