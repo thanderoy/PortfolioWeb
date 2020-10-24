@@ -26,7 +26,7 @@ def sendEmail(request):
         )
 
         email.fail_silently = False
-        email.content_subtype = 'html'
+        email.content_subtype = 'html', 'css'
         email.send()
 
     return render(request, 'P_App/email_sent.html')
