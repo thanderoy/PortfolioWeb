@@ -13,6 +13,7 @@ def sendEmail(request):
     if request.method == 'POST':
 
         template = render_to_string('P_App/email_template.html', {
+            'subject': request.POST['subject'],
             'username': request.POST['username'],
             'email': request.POST['email'],
             'message': request.POST['message'],
