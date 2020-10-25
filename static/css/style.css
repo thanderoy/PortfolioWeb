@@ -744,7 +744,7 @@ span i {
 
 .wrapper {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
   align-items: center;
   flex-direction: column;
   margin: 2rem;
