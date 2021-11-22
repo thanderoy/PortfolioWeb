@@ -1,2 +1,5 @@
-# portfolio_1
-First Portfolio Website 14.9.2020
+# Personal Website
+Personal Portfolio Website 14.9.2020.
+Built with Django.
+Hosted on Heroku.
+
