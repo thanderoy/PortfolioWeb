@@ -1,5 +1,5 @@
 # Personal Website
-Personal Portfolio Website 14.9.2020.
+Personal Portfolio Website. Updated 29.05.2022
 Built with Django.
 Hosted on Heroku.
 
