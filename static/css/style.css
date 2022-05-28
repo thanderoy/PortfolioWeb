@@ -192,7 +192,6 @@ nav ul li a:hover {
   letter-spacing: 2px;
   margin: 20px;
   padding: 10px 0 0 0;
-  text-shadow: 0 0 10px lime, 0 0 20px lime, 0 0 40px #00c800, 0 0 80px #00af00;
   animation: flicker 1.5s infinite alternate;   
 }
 
