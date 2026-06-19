@@ -6,18 +6,16 @@ from django.template.loader import render_to_string
 
 from datetime import datetime
 
-# datetime object containing current date and time
-now = datetime.now()
-
-dt_string = now.strftime("%B %d, %Y %H:%M")
-
 # Create your views here.
 def index(request):
     return render(request, 'P_App/index.html')
 
 def sendEmail(request):
-    
+
     if request.method == 'POST':
+
+        # Timestamp the message at send time, not at server startup.
+        dt_string = datetime.now().strftime("%B %d, %Y %H:%M")
 
         template = render_to_string('P_App/email_template.html', {
             'subject': request.POST['subject'],
