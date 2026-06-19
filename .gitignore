@@ -48,3 +48,9 @@ $RECYCLE.BIN/
 env/
 *.pyc
 *.scss
+
+# Django / project
+db.sqlite3
+*.pem
+staticfiles/
+.env
