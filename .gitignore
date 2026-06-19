@@ -54,3 +54,10 @@ db.sqlite3
 *.pem
 staticfiles/
 .env
+
+# uv / virtualenv
+.venv/
+__pycache__/
+
+# Local-only preview settings (not for production)
+settings_local.py
