@@ -18,20 +18,34 @@ npm run build      # type-check, lint, and prerender to ./dist
 
 The static output lands in `dist/` and can be served by any static host.
 
-## Deploy (the homelab host)
+## Deploy
 
-The site ships as a small nginx image that serves the prerendered `dist/`.
+The site ships as a small nginx image serving the prerendered `dist/`. In
+production it runs behind [Traefik](https://traefik.io/) on **roythan.de**,
+joining the homelab's shared `traefik-public` network — Traefik terminates TLS
+(Let's Encrypt) and routes to the container's port 80. All wiring is in
+`docker-compose.yml` via container labels.
 
 ```bash
-docker compose up -d --build      # serves on http://<host>:8080
-# or:
+# Prereq (once on the host): the shared ingress network must exist
+docker network create traefik-public
+
+# Build + run; Traefik discovers it by its labels and serves https://roythan.de
+docker compose up -d --build
+```
+
+Override the domain with `PORTFOLIO_DOMAIN` (defaults to `roythan.de`).
+
+For a quick local preview without Traefik, publish the port directly:
+
+```bash
 docker build -t portfolio .
-docker run -p 8080:80 portfolio
+docker run -p 8080:80 portfolio   # http://localhost:8080
 ```
 
 ## Structure
 
-```
+```text
 public/            # static assets (images, fonts) served from /
 src/
   components/nav/  # interactive nav (mobile menu)
