@@ -1,7 +1,7 @@
 # Thande Roy — Portfolio
 
 Personal portfolio website, rebuilt with [Qwik City](https://qwik.dev/) as a
-static site (SSG). Deployed as an nginx container on **the homelab host**.
+static site (SSG), served as a small nginx container behind Traefik.
 
 ## Develop
 
