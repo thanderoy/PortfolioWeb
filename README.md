@@ -57,4 +57,3 @@ adapters/static/   # Qwik static-site-generator (SSG) config
 Dockerfile         # node build -> nginx serve
 nginx.conf         # static serving + cache headers
 ```
-
