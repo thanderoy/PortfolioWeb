@@ -35,6 +35,8 @@ docker compose up -d --build
 ```
 
 Override the domain with `PORTFOLIO_DOMAIN` (defaults to `roythan.de`).
+`www.roythan.de` is served by a second router that 301-redirects to the apex —
+point DNS for **both** `roythan.de` and `www.roythan.de` at the host.
 
 For a quick local preview without Traefik, publish the port directly:
 
@@ -56,4 +58,3 @@ Dockerfile         # node build -> nginx serve
 nginx.conf         # static serving + cache headers
 ```
 
-The contact section uses a `mailto:` link (no backend).

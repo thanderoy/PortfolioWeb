@@ -21,6 +21,18 @@ services:
       traefik.http.routers.portfolio.tls.certresolver: "le"
       # nginx inside the container listens on :80
       traefik.http.services.portfolio.loadbalancer.server.port: "80"
+
+      # --- www -> apex redirect (www.roythan.de -> roythan.de, 301) ---
+      traefik.http.routers.portfolio-www.entrypoints: "https"
+      traefik.http.routers.portfolio-www.rule: "Host(`www.${PORTFOLIO_DOMAIN:-roythan.de}`)"
+      traefik.http.routers.portfolio-www.tls: "true"
+      traefik.http.routers.portfolio-www.tls.certresolver: "le"
+      traefik.http.routers.portfolio-www.service: "portfolio"
+      traefik.http.routers.portfolio-www.middlewares: "portfolio-www-redirect"
+      # $$ escapes compose interpolation so Traefik receives the ${1} capture group
+      traefik.http.middlewares.portfolio-www-redirect.redirectregex.regex: "^https?://www\\.(.+)"
+      traefik.http.middlewares.portfolio-www-redirect.redirectregex.replacement: "https://$${1}"
+      traefik.http.middlewares.portfolio-www-redirect.redirectregex.permanent: "true"
     logging:
       driver: "json-file"
       options:
