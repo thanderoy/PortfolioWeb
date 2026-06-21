@@ -1,13 +1,13 @@
 # Thande Roy — Portfolio
 
-Personal portfolio website, rebuilt with [Qwik City](https://qwik.dev/) as a
-static site (SSG). Deployed as an nginx container on **the homelab host**.
+Personal portfolio website, built with [Qwik City](https://qwik.dev/) as a
+static site (SSG).
 
 ## Develop
 
 ```bash
 npm install
-npm start          # Vite dev server (SSR) at http://localhost:5173
+npm start          # dev server at http://localhost:5173
 ```
 
 ## Build
@@ -16,30 +16,13 @@ npm start          # Vite dev server (SSR) at http://localhost:5173
 npm run build      # type-check, lint, and prerender to ./dist
 ```
 
-The static output lands in `dist/` and can be served by any static host.
+The static output in `dist/` can be served by any static host.
 
-## Deploy (the homelab host)
+## Deploy
 
-The site ships as a small nginx image that serves the prerendered `dist/`.
+Runs as a small nginx container behind Traefik; all routing/TLS wiring lives in
+`docker-compose.yml`.
 
 ```bash
-docker compose up -d --build      # serves on http://<host>:8080
-# or:
-docker build -t portfolio .
-docker run -p 8080:80 portfolio
+docker compose up -d --build
 ```
-
-## Structure
-
-```
-public/            # static assets (images, fonts) served from /
-src/
-  components/nav/  # interactive nav (mobile menu)
-  routes/index.tsx # the single-page portfolio + <head>
-  global.css       # theme (placeholder until the design revamp)
-adapters/static/   # Qwik static-site-generator (SSG) config
-Dockerfile         # node build -> nginx serve
-nginx.conf         # static serving + cache headers
-```
-
-The contact section uses a `mailto:` link (no backend).
